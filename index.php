@@ -23,6 +23,7 @@ if (isset($_SESSION['user'])) {
         $user = $_SESSION['user'];
         echo $user['name'];
         echo '<br>'."<a href='unlogin.php'>".'unlogin</a>';
+        echo '<br>'."<a href='profil.php'>".'Profil</a>';
     }
 
 ?>
