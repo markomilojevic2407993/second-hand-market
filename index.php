@@ -4,6 +4,8 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 if (isset($_SESSION['user'])) {
     $user = $_SESSION['user'];
+} else {
+    header('Location:login-index.php');
 }
 
 ?>
@@ -27,18 +29,10 @@ if (isset($_SESSION['user'])) {
     }
 
 ?>
-        <form action="login.php" method="post">
-            <input type="text" name="name" required placeholder="your name">
-            <input type="text" name="pass" required placeholder="your pass">
-            <button type="submit">Login</button>
-        </form>
-        <hr>
+       
+        
     
-    <form action="controller/registrat.php" method="post">
-        <input type="text" name="name" placeholder="unesi svoje ima " required> 
-        <input type="text" name="pass" placeholder="unesi svoj password" required>
-        <button type="submit">new user</button>
-    </form>
+    
     <hr>
 
 
