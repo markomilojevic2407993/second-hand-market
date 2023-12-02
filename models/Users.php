@@ -11,4 +11,12 @@ class User
         $this->name = $name;
         $this->pass = $pass;
     }
+
+    public function save()
+    {
+        global $conn;
+        $name = $conn->real_escape_string($this->name);
+        $pass = $conn->real_escape_string($this->pass);
+        $sql = $conn->query("INSERT INTO user(name, pass) VALUES('$name', '$pass')");
+    }
 }
